@@ -8,6 +8,11 @@
       {{ count }}
       <button v-on:click="increment">+</button>
     </div>
+    <div style="margin-top:10px;">
+      <span style="margin-right:10px;">{{ firstName }}</span>
+      <span style="margin-right:10px;">{{ lastName }}</span>
+      <span style="margin-right:10px;">{{ fullName }}</span>
+    </div>
   </div>
 </template>
 
@@ -24,6 +29,22 @@ export default class HelloWorld extends Vue {
 
   // Class properties will be component data
   count = 0;
+
+  // Computed properties
+  firstName = 'Andy';
+  lastName = 'Chen';
+
+  // Declared as computed property getter
+  get fullName(): string {
+    return this.firstName + ' ' + this.lastName;
+  }
+
+  // Declared as computed property setter
+  set fullName(value: string) {
+    const splited = value.split(' ');
+    this.firstName = splited[0];
+    this.lastName = splited[1] || '';
+  }
 
   // Methods will be component methods
   increment(): number {
