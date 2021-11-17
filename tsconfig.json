@@ -1,5 +1,6 @@
 {
   "compilerOptions": {
+    // ESNext is a name that always indicates the next version of EcmaScript.
     "target": "esnext",
     "module": "esnext",
     "strict": true,
