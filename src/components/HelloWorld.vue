@@ -54,6 +54,11 @@ export default class HelloWorld extends Vue {
   decrement(): number {
     return this.count--;
   }
+
+  // Lifecycle hook
+  mounted(): void {
+    console.log('this message from lifecycle hook');
+  }
 }
 </script>
 
